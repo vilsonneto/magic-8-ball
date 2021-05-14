@@ -1,0 +1,152 @@
+:root {
+    --ball-size: 230px;
+    --ball-max-size: 65vw;
+}
+
+.hidden {
+    display: none;
+}
+
+html, body, header, main, h1, p {
+    margin: 0;
+    padding: 0;
+    max-width: 100vw;
+}
+
+body {
+    box-sizing: border-box;
+    background-color: burlywood;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+header {
+    padding: 10px;
+}
+
+main {
+    padding: 20px;
+}
+header h1 {
+    text-align: center;
+}
+
+main .ball {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+    width:var(--ball-size) ;
+    min-width: 270px;
+    max-width: var(--ball-max-size);
+    height: var(--ball-size);
+    min-height: 270px;
+    max-height: var(--ball-max-size);
+    border-radius: 50%;
+    background-color: #000;
+    box-shadow: 
+     inset -10px -10px 10px #4b392b,
+     inset 3px 3px 5px #FFF,
+     58px 47px 20px -20px #0000008f;
+} 
+
+main .ball .result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background: #fffffff5;
+    overflow: hidden;
+}
+
+main .ball .result .number {
+    font-size: 7rem;
+    font-family: emoji;
+}
+
+main .ball .result .positive-triangle,
+main .ball .result .negative-triangle {
+    height: 85%;
+    width: 85%;
+    max-width: 138px;
+    background-color: blue;
+    box-shadow: inset 1px -2px 41px 9px #fa8072ba;
+}
+
+main .ball .result .positive-triangle {
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
+
+main .ball .result .negative-triangle {
+    clip-path: polygon(50% 0, 0% 100%, 100% 100%);
+    
+}
+
+main .ball .result .text-result {
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #e22bd6;
+    display: block;
+    width: 60%;
+    margin: 10px auto;
+    overflow-wrap: break-word;
+}
+
+main .ball .result .negative-triangle .text-result {
+    padding-top: 60px;
+}
+
+main h2 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-top: 45px;
+}
+
+main #play-button {
+    width: 200px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: #ee4000;
+    margin: 30px auto;
+    display: block;
+    outline: none;
+    font-size: 1.6rem;
+}
+
+
+@media (min-width: 720px ) {
+    :root {
+        --ball-size: 470px;
+    }
+
+    main .ball .result .number {
+        font-size: 9rem;
+        font-family: emoji;
+    }
+
+    main .ball .result .positive-triangle,
+    main .ball .result .negative-triangle {
+        max-width: 185px;
+        max-height: 185px;
+    }
+
+    main .ball .result .text-result {
+        font-size: 18px;
+    }
+
+    main .ball .result .positive-triangle .text-result {
+        width: 75%;
+    }
+
+    main .ball .result .negative-triangle .text-result {
+        padding-top: 90px;
+    }
+
+    main h2 {
+        font-size: 1.7rem;
+    }
+}
+
